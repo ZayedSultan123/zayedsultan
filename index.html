@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zayed Sultan | Portfolio</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS – Animate On Scroll -->
+  <!-- AOS – Animate On Scroll -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 
-  <style> html{scroll-behavior:smooth;} </style>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Mobile navbar -->
+  <!-- ─── Mobile navbar ──────────────────────────────────────────────── -->
   <div class="fixed top-0 left-0 w-full bg-white shadow-md z-50 flex items-center justify-between px-4 py-2 md:hidden">
     <span class="font-bold text-lg">Zayed</span>
     <button id="menu-btn" class="text-2xl font-bold">≡</button>
   </div>
 
-  <!-- Mobile menu -->
+  <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden fixed top-12 left-0 w-full bg-white shadow-md z-40 flex flex-col space-y-4 px-4 py-4 md:hidden">
     <button class="bg-black text-white py-2 rounded" onclick="scrollToSection('portfolio')">View Portfolio</button>
     <button class="border border-black text-black py-2 rounded" onclick="scrollToSection('contact')">Contact Me</button>
   </div>
 
-  <!-- Hero -->
+  <!-- ─── Hero ───────────────────────────────────────────────────────── -->
   <section class="pt-16 md:pt-24 text-center space-y-4" data-aos="fade-up">
     <h1 class="text-5xl font-extrabold text-black">Zayed Sultan</h1>
     <p class="text-lg text-gray-600">Certified Apple Developer | App & Website Developer</p>
@@ -37,7 +39,7 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
+  <!-- ─── Portfolio ──────────────────────────────────────────────────── -->
   <section id="portfolio" class="max-w-4xl mx-auto px-4 mt-24 space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-black mb-4">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2">
@@ -47,14 +49,14 @@
         <a href="#" class="text-black underline mt-2 inline-block">Learn More</a>
       </div>
       <div class="shadow-md rounded-2xl p-5 bg-white" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-xl font-semibold">Online Store Example</h3>
+        <h3 class="text-xl font-semibold">Online Store Example</h3>
         <p class="text-gray-600 mt-1">A sample e‑commerce app showcasing modern UI/UX.</p>
         <a href="#" class="text-black underline mt-2 inline-block">Learn More</a>
       </div>
     </div>
   </section>
 
-  <!-- Blog -->
+  <!-- ─── Blog ───────────────────────────────────────────────────────── -->
   <section class="max-w-3xl mx-auto px-4 mt-24 space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-black mb-4">Latest Blog Posts</h2>
     <div class="shadow-md rounded-2xl p-5 bg-white space-y-3">
@@ -68,60 +70,86 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- ─── Contact ────────────────────────────────────────────────────── -->
   <section id="contact" class="max-w-lg mx-auto px-4 mt-24 space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-black mb-4">Get in Touch</h2>
+
+    <!-- Contact form -->
     <div class="space-y-4">
-      <input id="name" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Your Name">
-      <input id="email" type="email" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Your Email">
+      <input id="name" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Your Name" />
+      <input id="email" type="email" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Your Email" />
       <textarea id="message" rows="4" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Your Message"></textarea>
       <button onclick="sendMessage()" class="bg-black text-white px-6 py-2 rounded w-full">Send Message</button>
     </div>
+
+    <!-- Social boxes -->
+    <div class="grid gap-4 sm:grid-cols-2 mt-8" data-aos="fade-up">
+      <!-- Box 1 -->
+      <a href="https://instagram.com/zsultan___" aria-label="Instagram" target="_blank"
+         class="flex items-center space-x-3 border border-gray-300 rounded-xl p-4 hover:bg-gray-100 transition">
+        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/>
+        </svg>
+        <span class="font-medium text-black">@zsultan___</span>
+      </a>
+
+      <!-- Box 2 -->
+      <a href="https://instagram.com/zsultan___" aria-label="Instagram" target="_blank"
+         class="flex items-center space-x-3 border border-gray-300 rounded-xl p-4 hover:bg-gray-100 transition">
+        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/>
+        </svg>
+        <span class="font-medium text-black">@zsultan___</span>
+      </a>
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ─── Footer ─────────────────────────────────────────────────────── -->
   <footer class="border-t mt-24 pt-6 pb-12 text-center text-gray-600" data-aos="fade-up">
-    <p>© <span id="year"></span> Zayed Sultan. All rights reserved.</p>
+    <p>© <span id="year"></span> Zayed Sultan. All rights reserved.</p>
     <div class="flex justify-center space-x-4 mt-2">
       <a href="https://instagram.com/zsultan___" target="_blank" class="text-black underline">@zsultan___</a>
       <a href="mailto:zayedsultan37979@gmail.com" class="text-black underline">zayedsultan37979@gmail.com</a>
     </div>
   </footer>
 
-  <!-- AOS / Tail‑scripts -->
+  <!-- ─── Scripts ─────────────────────────────────────────────────────── -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 700, once: true });   // smooth fade‑ups
+    AOS.init({ duration: 700, once: true });
   </script>
 
   <script>
-  /* year */
-  document.getElementById('year').textContent = new Date().getFullYear();
+    /* current year */
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* mobile menu */
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+    /* mobile menu toggle */
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-  /* smooth scroll helper */
-  function scrollToSection(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); mobileMenu.classList.add('hidden'); }
+    /* smooth scroll helper */
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      mobileMenu.classList.add('hidden');
+    }
 
-  /* read more */
-  const readMoreBtn = document.getElementById('readmore-btn');
-  readMoreBtn.addEventListener('click', ()=>{
-    document.getElementById('blog-more').classList.remove('hidden');
-    readMoreBtn.classList.add('hidden');
-  });
+    /* read‑more toggle */
+    const readMoreBtn = document.getElementById('readmore-btn');
+    readMoreBtn.addEventListener('click', () => {
+      document.getElementById('blog-more').classList.remove('hidden');
+      readMoreBtn.classList.add('hidden');
+    });
 
-  /* mailto */
-  function sendMessage(){
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const msg = document.getElementById('message').value.trim();
-    const subject = encodeURIComponent('Message from '+name);
-    const body = encodeURIComponent('Name: '+name+'%0AEmail: '+email+'%0A%0A'+msg);
-    window.location.href = `mailto:zayedsultan37979@gmail.com?subject=${subject}&body=${body}`;
-  }
+    /* mailto sender */
+    function sendMessage() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Message from ' + name);
+      const body = encodeURIComponent(`Name: ${name}%0AEmail: ${email}%0A%0A${msg}`);
+      window.location.href = `mailto:zayedsultan37979@gmail.com?subject=${subject}&body=${body}`;
+    }
   </script>
 </body>
 </html>
