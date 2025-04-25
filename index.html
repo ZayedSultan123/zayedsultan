@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zayed Sultan | Portfolio</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS – Animate On Scroll CSS -->
+  <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+  <!-- Spline Viewer Web Component -->
+  <script type="module"
+    src="https://unpkg.com/@splinetool/viewer@1.9.86/build/spline-viewer.js">
+  </script>
 
   <style>
     html { scroll-behavior: smooth; }
-    body {
-      background: linear-gradient(to bottom right, #f9fafb, #e6edf4);
-    }
+    body { background: linear-gradient(to bottom right, #f9fafb, #e6edf4); }
   </style>
 </head>
 <body class="text-gray-800">
@@ -25,8 +28,6 @@
     <span class="font-bold text-lg">Zayed</span>
     <button id="menu-btn" class="text-2xl font-bold">≡</button>
   </div>
-
-  <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden fixed top-12 left-0 w-full bg-white shadow-md z-40 flex flex-col space-y-4 px-4 py-4 md:hidden">
     <button data-scroll="portfolio" class="bg-gradient-to-r from-black to-gray-700 text-white py-2 rounded">View Portfolio</button>
     <button data-scroll="contact" class="border border-black text-black py-2 rounded">Contact Me</button>
@@ -45,7 +46,10 @@
   <!-- 3D Prototype Showcase -->
   <section id="model" class="max-w-4xl mx-auto px-4 mt-16" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-black mb-4 text-center">3D Prototype Showcase</h2>
-    <div id="model-container" class="w-full h-[500px]"></div>
+    <spline-viewer
+      class="w-full h-[500px] rounded-lg shadow-lg"
+      url="https://prod.spline.design/whz5YEg5Zr-cAyYa/scene.splinecode">
+    </spline-viewer>
   </section>
 
   <!-- Portfolio -->
@@ -73,12 +77,12 @@
       <p class="text-gray-600">Take a behind-the-scenes look at how I designed and built the Eco-Pulse app from scratch.</p>
       <button id="readmore-btn" class="text-black underline">Read More</button>
       <p id="blog-more" class="text-gray-700 hidden">
-        Eco-Pulse helps users make eco-friendly travel decisions by calculating carbon savings. Just choose your start and destination, select a green travel option like cycling or electric car, and the app instantly draws the route on a live map. It displays your total distance, estimated time, and how much carbon you’re saving — helping you turn every trip from Abu Dhabi to Dubai (or anywhere) into a win for the environment.
+        Eco-Pulse helps users make eco-friendly travel decisions by calculating carbon savings...
       </p>
     </div>
   </section>
 
-  <!-- Certifications & Requests -->
+  <!-- Requests & Certifications -->
   <section id="certifications" class="max-w-4xl mx-auto px-4 mt-24 space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-black mb-4">Requests & Certifications</h2>
     <div class="grid gap-6 md:grid-cols-2">
@@ -88,7 +92,7 @@
       </div>
       <div class="shadow-md rounded-2xl p-5 bg-white">
         <h3 class="text-xl font-semibold">Request a Custom App</h3>
-        <p class="text-gray-600 mt-1">Looking for a custom app or website? Contact me below to get started on your idea.</p>
+        <p class="text-gray-600 mt-1">Looking for a custom app or website? Contact me below to get started.</p>
       </div>
     </div>
   </section>
@@ -103,13 +107,10 @@
       <button id="send-btn" class="bg-gradient-to-r from-black to-gray-700 text-white px-6 py-2 rounded w-full">Send Message</button>
     </div>
 
-    <!-- Social box -->
+    <!-- Social -->
     <div class="grid gap-4 sm:grid-cols-1 mt-8" data-aos="fade-up">
-      <a href="https://instagram.com/zsultan___" aria-label="Instagram" target="_blank"
-        class="flex items-center space-x-3 border border-gray-300 rounded-xl p-4 hover:bg-gray-100 transition">
-        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/>
-        </svg>
+      <a href="https://instagram.com/zsultan___" target="_blank" class="flex items-center space-x-3 border border-gray-300 rounded-xl p-4 hover:bg-gray-100">
+        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="…"/></svg>
         <span class="font-medium text-black">@zsultan___</span>
       </a>
     </div>
@@ -119,14 +120,13 @@
   <footer class="border-t mt-24 pt-6 pb-12 text-center text-gray-600" data-aos="fade-up">
     <p>© <span id="year"></span> Zayed Sultan. All rights reserved.</p>
     <div class="flex justify-center space-x-4 mt-2">
-      <a href="https://instagram.com/zsultan___" target="_blank" class="text-black underline">@zsultan___</a>
       <a href="mailto:zayedsultan37979@gmail.com" class="text-black underline">zayedsultan37979@gmail.com</a>
     </div>
   </footer>
 
-  <!-- AOS – Animate On Scroll JS -->
+  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <!-- Your custom script -->
+  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
