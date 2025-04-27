@@ -31,10 +31,10 @@
     <button data-scroll="contact" class="text-white py-2">Contact</button>
   </div>
 
-  <!-- Full-screen Hero showing "ZAYED SULTAN" + subtitle + buttons -->
+  <!-- Hero (auto height, no huge gap) -->
   <section
     id="hero"
-    class="w-full h-screen flex flex-col items-center justify-center bg-black text-center px-4"
+    class="w-full flex flex-col items-center justify-center bg-black text-center px-4 py-16"
     data-aos="fade-up"
   >
     <h1 class="text-white font-extrabold uppercase leading-none text-[10vw] md:text-[8vw]">
@@ -59,8 +59,8 @@
     </div>
   </section>
 
-  <!-- 3D Model -->
-  <section id="model" class="mt-16 px-4 max-w-4xl mx-auto" data-aos="fade-up">
+  <!-- 3D Model (reduced top margin) -->
+  <section id="model" class="mt-8 px-4 max-w-4xl mx-auto" data-aos="fade-up">
     <spline-viewer
       class="w-full h-[500px] rounded-md shadow-xl"
       url="https://prod.spline.design/PcpuFPz3E-xSaUMK/scene.splinecode"
@@ -71,26 +71,62 @@
   <section id="portfolio" class="mt-24 px-4 max-w-4xl mx-auto space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2">
-      <!-- ... your project cards ... -->
+      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
+        <h3 class="text-xl font-semibold">Eco-Pulse</h3>
+        <p class="mt-2 text-gray-400">An eco-friendly app promoting sustainability.</p>
+        <a href="#" class="mt-4 inline-block text-white underline">Learn More</a>
+      </div>
+      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
+        <h3 class="text-xl font-semibold">Online Store Example</h3>
+        <p class="mt-2 text-gray-400">A sample e-commerce app showcasing modern UI/UX.</p>
+        <a href="#" class="mt-4 inline-block text-white underline">Learn More</a>
+      </div>
     </div>
   </section>
 
   <!-- Blog -->
   <section class="mt-24 px-4 max-w-3xl mx-auto space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold">Latest Blog Posts</h2>
-    <!-- ... -->
+    <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
+      <h3 class="text-xl font-semibold">How I Built Eco-Pulse</h3>
+      <p class="mt-2 text-gray-400">Behind the scenes of designing and building Eco-Pulse from scratch.</p>
+      <button id="readmore-btn" class="mt-4 text-white underline">Read More</button>
+      <p id="blog-more" class="mt-2 text-gray-400 hidden">
+        Eco-Pulse helps users make eco-friendly travel decisions by calculating carbon savings. Just choose your start and destination, select a green travel option like cycling or electric car, and the app instantly draws the route on a live map. It displays your total distance, estimated time, and how much carbon you’re saving — helping you turn every trip into a win for the environment.
+      </p>
+    </div>
   </section>
 
   <!-- Certifications -->
   <section class="mt-24 px-4 max-w-4xl mx-auto space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold">Certifications</h2>
-    <!-- ... -->
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
+        <h3 class="text-xl font-semibold">Certified Apple Developer</h3>
+        <p class="mt-2 text-gray-400">Recognized by Apple for Swift &amp; Xcode expertise.</p>
+      </div>
+      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
+        <h3 class="text-xl font-semibold">Custom App Requests</h3>
+        <p class="mt-2 text-gray-400">Let’s bring your app ideas to life with custom development.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="mt-24 px-4 max-w-lg mx-auto space-y-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold">Get in Touch</h2>
-    <!-- ... form and social links ... -->
+    <div class="space-y-4">
+      <input id="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white" placeholder="Your Name" />
+      <input id="email" type="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white" placeholder="Your Email" />
+      <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white" placeholder="Your Message"></textarea>
+      <button id="send-btn" class="w-full py-2 bg-gray-700 rounded-md hover:bg-gray-600 transition">Send Message</button>
+    </div>
+    <div class="mt-8 flex justify-center">
+      <a href="https://instagram.com/zsultan___" target="_blank" class="flex items-center space-x-2 text-gray-200 hover:text-white transition">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/></svg>
+        <span>@zsultan___</span>
+      </a>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -104,7 +140,6 @@
     AOS.init();
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <!-- Your custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
