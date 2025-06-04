@@ -30,6 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     readBtn.classList.add('hidden');
   });
 
+  // Project "Learn More" toggles
+  document.querySelectorAll('[data-target]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const extra = document.getElementById(btn.dataset.target);
+      if (!extra) return;
+      extra.classList.toggle('hidden');
+      btn.textContent = extra.classList.contains('hidden') ? 'Learn More' : 'Hide';
+    });
+  });
+
   // Mailto contact
   document.getElementById('send-btn')?.addEventListener('click', () => {
     const name  = document.getElementById('name').value.trim();
