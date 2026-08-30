@@ -1,52 +1,62 @@
-// script.js
-// Handles mobile menu, smooth scroll, AOS init, read-more, and mailto
+// script.js - Handles menu drawer, scroll behavior, text toggles, and email action
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize AOS
-  if (window.AOS) AOS.init({ duration: 700, once: true });
+  // Initialize AOS scroll animations
+  if (window.AOS) {
+    AOS.init({ duration: 600, once: true });
+  }
 
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Set current footer year
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 
   // Mobile menu toggle
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-  // Smooth scroll for buttons with data-scroll
-  document.querySelectorAll('[data-scroll]').forEach(btn => {
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+
+  // App project "Learn More" toggle buttons
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const target = document.getElementById(btn.dataset.scroll);
-      target?.scrollIntoView({ behavior: 'smooth' });
-      mobileMenu.classList.add('hidden');
+      const targetId = btn.getAttribute('data-toggle');
+      const targetEl = document.getElementById(targetId);
+      
+      if (targetEl) {
+        targetEl.classList.toggle('hidden');
+        btn.textContent = targetEl.classList.contains('hidden') ? 'Learn More' : 'Hide';
+      }
     });
   });
 
-  // Read more toggle
-  const readBtn = document.getElementById('readmore-btn');
-  const moreTxt = document.getElementById('blog-more');
-  readBtn?.addEventListener('click', () => {
-    moreTxt.classList.remove('hidden');
-    readBtn.classList.add('hidden');
-  });
+  // Mailto contact form trigger
+  const sendBtn = document.getElementById('send-btn');
+  if (sendBtn) {
+    sendBtn.addEventListener('click', () => {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
 
-  // Project "Learn More" toggles
-  document.querySelectorAll('[data-target]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const extra = document.getElementById(btn.dataset.target);
-      if (!extra) return;
-      extra.classList.toggle('hidden');
-      btn.textContent = extra.classList.contains('hidden') ? 'Learn More' : 'Hide';
+      if (!name || !email || !msg) {
+        alert('Please fill out all fields before sending.');
+        return;
+      }
+
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+      window.location.href = `mailto:zayedsultan37979@gmail.com?subject=${subject}&body=${body}`;
     });
-  });
-
-  // Mailto contact
-  document.getElementById('send-btn')?.addEventListener('click', () => {
-    const name  = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const msg   = document.getElementById('message').value.trim();
-    const subject = encodeURIComponent('Message from ' + name);
-    const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
-    window.location.href = `mailto:zayedsultan37979@gmail.com?subject=${subject}&body=${body}`;
-  });
+  }
 });
