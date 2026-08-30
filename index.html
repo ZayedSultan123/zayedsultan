@@ -1,158 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zayed Sultan | Portfolio</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 
-  <!-- Spline Viewer v1.9.87 -->
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.87/build/spline-viewer.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { background: #000; }
+    body { background-color: #050505; color: #ffffff; }
+    .glass-card { background: rgba(20, 20, 20, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .glass-nav { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(12px); }
   </style>
 </head>
-<body class="text-white">
+<body class="font-sans antialiased text-gray-200">
 
-  <!-- Mobile Navbar -->
-  <div class="fixed w-full bg-black bg-opacity-80 backdrop-blur-sm z-50 flex items-center justify-between px-4 py-2 md:hidden">
-    <span class="font-bold text-lg">Zayed</span>
-    <button id="menu-btn" class="text-2xl">≡</button>
-  </div>
-  <div id="mobile-menu" class="hidden fixed top-12 w-full bg-black bg-opacity-90 z-40 flex flex-col space-y-2 px-4 py-4 md:hidden">
-    <button data-scroll="portfolio" class="text-white py-2">Portfolio</button>
-    <button data-scroll="contact" class="text-white py-2">Contact</button>
-  </div>
+  <header class="fixed top-0 left-0 w-full glass-nav z-50 border-b border-neutral-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="text-xl font-bold tracking-wider text-white">ZAYED</a>
+      
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+        <a href="#intro" class="hover:text-white transition">Intro</a>
+        <a href="#skills" class="hover:text-white transition">Skills</a>
+        <a href="#highlights" class="hover:text-white transition">Highlights</a>
+        <a href="#apps" class="hover:text-white transition">Apps</a>
+        <a href="#certifications" class="hover:text-white transition">Certs</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </nav>
 
-  <!-- Hero -->
-  <section
-    id="hero"
-    class="w-full flex flex-col items-center justify-center bg-black text-center px-4 py-16"
-    data-aos="fade-up"
-  >
-    <h1 class="text-white font-extrabold uppercase leading-none text-[10vw] md:text-[8vw]">
-      ZAYED SULTAN
-    </h1>
-    <p class="mt-4 text-gray-400 text-lg">
-      Certified Apple Developer &bull; App &amp; Website Developer
-    </p>
-    <div class="mt-6 flex justify-center space-x-4">
-      <button
-        data-scroll="portfolio"
-        class="px-6 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition"
-      >
-        View Portfolio
-      </button>
-      <button
-        data-scroll="contact"
-        class="px-6 py-2 border border-gray-700 rounded-md hover:bg-gray-800 transition"
-      >
-        Contact Me
+      <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+        <i class="fa-solid fa-bars text-xl"></i>
       </button>
     </div>
-  </section>
 
-  <!-- 3D Model -->
-  <section id="model" class="mt-8 px-4 max-w-4xl mx-auto" data-aos="fade-up">
-    <spline-viewer
-      class="w-full h-[500px] rounded-md shadow-xl"
-      url="https://prod.spline.design/cZFnnjhSXrkxp-8M/scene.splinecode"
-    ></spline-viewer>
-  </section>
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-neutral-800 px-6 py-4 flex flex-col space-y-3">
+      <a href="#intro" class="mobile-link text-gray-300 hover:text-white">Intro</a>
+      <a href="#skills" class="mobile-link text-gray-300 hover:text-white">Skills</a>
+      <a href="#highlights" class="mobile-link text-gray-300 hover:text-white">Highlights</a>
+      <a href="#apps" class="mobile-link text-gray-300 hover:text-white">Apps</a>
+      <a href="#certifications" class="mobile-link text-gray-300 hover:text-white">Certs</a>
+      <a href="#contact" class="mobile-link text-gray-300 hover:text-white">Contact</a>
+    </div>
+  </header>
 
-  <!-- Projects -->
-  <section id="portfolio" class="mt-24 px-4 max-w-4xl mx-auto space-y-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold">Projects</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
-        <h3 class="text-xl font-semibold">Eco-Pulse</h3>
-        <p class="mt-2 text-gray-400">An eco-friendly app promoting sustainability.</p>
-        <button data-target="eco-more" class="mt-4 text-white underline">Learn More</button>
-        <p id="eco-more" class="mt-2 text-gray-400 hidden">
-          Track your carbon savings when you choose greener ways to get around. Eco-Pulse draws your route on a live map and shows distance, time, and CO₂ reduced.
-        </p>
+  <main class="max-w-5xl mx-auto px-6 pt-28 pb-16 space-y-24">
+
+    <section id="intro" data-aos="fade-up" class="pt-6">
+      <h2 class="text-3xl font-extrabold text-white mb-6 tracking-tight">Introduction &amp; Goal</h2>
+      <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-8">
+        <div class="w-40 h-40 md:w-48 md:h-48 rounded-xl overflow-hidden bg-neutral-800 flex-shrink-0 border border-neutral-700">
+          <img src="profile.jpg" alt="Zayed Sultan" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/200?text=Zayed';" />
+        </div>
+        <div class="space-y-4">
+          <p class="text-gray-300 text-lg leading-relaxed">
+            As an aspiring computer scientist and software engineer, I focus on building sustainable, user-centric technologies that solve real-world challenges. My portfolio showcases my development journey spanning native iOS applications, responsive web interfaces, and applied engineering research.
+          </p>
+          <p class="text-gray-400 text-sm">
+            Seeking to contribute technical creativity and leadership within a competitive undergraduate computer science program.
+          </p>
+        </div>
       </div>
-      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
-        <h3 class="text-xl font-semibold">Online Store Example</h3>
-        <p class="mt-2 text-gray-400">A sample e-commerce app showcasing modern UI/UX.</p>
-        <button data-target="store-more" class="mt-4 text-white underline">Learn More</button>
-        <p id="store-more" class="mt-2 text-gray-400 hidden">
-          This demo shop features intuitive product browsing and a clean checkout flow—perfect for demonstrating responsive design patterns.
-        </p>
+    </section>
+
+    <section id="skills" data-aos="fade-up">
+      <h2 class="text-3xl font-extrabold text-white mb-6 tracking-tight">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        
+        <div class="glass-card rounded-xl p-5 flex flex-col items-center justify-center space-y-3 hover:border-neutral-500 transition">
+          <i class="fa-brands fa-html5 text-3xl text-orange-500"></i>
+          <span class="font-semibold text-gray-200">HTML / Web</span>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 flex flex-col items-center justify-center space-y-3 hover:border-neutral-500 transition">
+          <i class="fa-brands fa-java text-3xl text-red-400"></i>
+          <span class="font-semibold text-gray-200">Java</span>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 flex flex-col items-center justify-center space-y-3 hover:border-neutral-500 transition">
+          <i class="fa-brands fa-swift text-3xl text-orange-400"></i>
+          <span class="font-semibold text-gray-200">Swift &amp; Xcode</span>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 flex flex-col items-center justify-center space-y-3 hover:border-neutral-500 transition">
+          <i class="fa-solid fa-pen-nib text-3xl text-purple-400"></i>
+          <span class="font-semibold text-gray-200">UI/UX Design</span>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 flex flex-col items-center justify-center space-y-3 hover:border-neutral-500 transition">
+          <i class="fa-solid fa-mobile-screen-button text-3xl text-blue-400"></i>
+          <span class="font-semibold text-gray-200">iOS Development</span>
+        </div>
+
+        <div class="glass-card rounded-xl p-5 flex flex-col items-center justify-center space-y-3 hover:border-neutral-500 transition">
+          <i class="fa-solid fa-layer-group text-3xl text-teal-400"></i>
+          <span class="font-semibold text-gray-200">iOS Design</span>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Blog -->
-  <section class="mt-24 px-4 max-w-3xl mx-auto space-y-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold">Latest Blog Posts</h2>
-    <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition">
-      <h3 class="text-xl font-semibold">How I Built Eco-Pulse</h3>
-      <p class="mt-2 text-gray-400">Behind the scenes of designing and building Eco-Pulse from scratch.</p>
-      <button id="readmore-btn" class="mt-4 text-white underline">Read More</button>
-      <p id="blog-more" class="mt-2 text-gray-400 hidden">
-        Eco-Pulse helps users make eco-friendly travel decisions by calculating carbon savings. Just choose your start and destination, select a green travel option like cycling or electric car, and the app instantly draws the route on a live map. It displays your total distance, estimated time, and how much carbon you’re saving — helping you turn every trip into a win for the environment.
-      </p>
-    </div>
-  </section>
-
-  <!-- Certifications -->
-  <section id="certifications" class="mt-24 px-4 max-w-4xl mx-auto space-y-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold">Certifications</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition text-center">
-        <h3 class="text-xl font-semibold">Certified Apple Developer</h3>
-        <p class="mt-2 text-gray-400">Recognized by Apple for Swift &amp; Xcode expertise.</p>
-        <!-- Bumped up badge size to h-32 -->
-        <img
-          src="image.png"
-          alt="Certified Apple Developer Badge"
-          class="mx-auto h-32 mt-4"
-        />
-        <p class="mt-2 text-gray-400">App Development with Swift &mdash; Associate</p>
+    <section id="highlights" data-aos="fade-up">
+      <h2 class="text-3xl font-extrabold text-white mb-6 tracking-tight">Career Highlights &amp; Achievements</h2>
+      <div class="glass-card rounded-2xl p-6 md:p-8">
+        <ul class="space-y-4 text-gray-300">
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-award text-yellow-500 mt-1"></i>
+            <span><strong>Nominated for EmiratesSkills Competition:</strong> Recognized for technical excellence in Chemical Laboratory Technology.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-trophy text-yellow-500 mt-1"></i>
+            <span><strong>Swift Innovators Program Winner:</strong> First place in app interface design for high-impact user experiences built with Swift &amp; Xcode.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-leaf text-green-500 mt-1"></i>
+            <span><strong>Make it in the Emirates Exhibition:</strong> Presented engineering research on treated palm fiber composite materials as sustainable alternatives to fiberglass in automotive manufacturing.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-microphone text-blue-400 mt-1"></i>
+            <span><strong>EEG Inter-School Environmental Public Speaking:</strong> Presented key insights on sustainable healthcare solutions and environmental conservation strategies.</span>
+          </li>
+        </ul>
       </div>
-      <div class="p-5 bg-black bg-opacity-50 border border-gray-700 rounded-lg hover:bg-opacity-60 transition text-center">
-        <h3 class="text-xl font-semibold">Custom App Requests</h3>
-        <p class="mt-2 text-gray-400">Let’s bring your app ideas to life with custom development.</p>
+    </section>
+
+    <section id="apps" data-aos="fade-up">
+      <h2 class="text-3xl font-extrabold text-white mb-6 tracking-tight">Apps Created &amp; Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col hover:border-neutral-600 transition">
+          <img src="Screenshot 2025-09-05 at 1.14.23 PM.jpg" alt="Eco-Transite App Showcase" class="w-full h-48 object-cover border-b border-neutral-800" />
+          <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+            <div>
+              <h3 class="text-xl font-bold text-white">Eco-Transite</h3>
+              <p class="text-sm text-gray-400 mt-1">Carbon-track your green commute via live map telemetry.</p>
+              <div id="desc-eco" class="hidden text-xs text-gray-300 mt-3 p-3 bg-neutral-900 rounded-lg">
+                Eco-Transite calculates real-time carbon savings for eco-friendly travel modes (cycling, walking, EV). Features live routing, estimated travel duration, and cumulative emission reduction metrics.
+              </div>
+            </div>
+            <div class="flex items-center gap-3 pt-2">
+              <button data-toggle="desc-eco" class="toggle-btn px-4 py-2 text-xs font-semibold bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg transition border border-neutral-700">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col hover:border-neutral-600 transition">
+          <img src="Screenshot 2025-09-05 at 1.17.02 PM.jpg" alt="Oversized Co. E-Commerce Showcase" class="w-full h-48 object-cover border-b border-neutral-800" />
+          <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+            <div>
+              <h3 class="text-xl font-bold text-white">Oversized Co.</h3>
+              <p class="text-sm text-gray-400 mt-1">A clean e-commerce mobile application platform.</p>
+              <div id="desc-oversized" class="hidden text-xs text-gray-300 mt-3 p-3 bg-neutral-900 rounded-lg">
+                Designed with a streamlined shopping flow, minimalist product grids, secure user authentication layouts, and interactive item customization screens.
+              </div>
+            </div>
+            <div class="flex items-center gap-3 pt-2">
+              <button data-toggle="desc-oversized" class="toggle-btn px-4 py-2 text-xs font-semibold bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg transition border border-neutral-700">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col hover:border-neutral-600 transition">
+          <img src="Screenshot 2025-09-05 at 1.33.04 PM.jpg" alt="The Riddler App Showcase" class="w-full h-48 object-cover border-b border-neutral-800" />
+          <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+            <div>
+              <h3 class="text-xl font-bold text-white">Jokes App / The Riddler</h3>
+              <p class="text-sm text-gray-400 mt-1">Interactive brain-teaser app with dynamic difficulty levels.</p>
+              <div id="desc-riddler" class="hidden text-xs text-gray-300 mt-3 p-3 bg-neutral-900 rounded-lg">
+                Features customized slider controls for level difficulty, hint reveal states, user answer validation algorithms, and score tracking.
+              </div>
+            </div>
+            <div class="flex items-center gap-3 pt-2">
+              <button data-toggle="desc-riddler" class="toggle-btn px-4 py-2 text-xs font-semibold bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg transition border border-neutral-700">Learn More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl overflow-hidden flex flex-col hover:border-neutral-600 transition">
+          <img src="Screenshot 2026-08-30 at 4.44.56 PM.jpg" alt="Ruwad App Showcase" class="w-full h-48 object-cover border-b border-neutral-800" />
+          <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+            <div>
+              <h3 class="text-xl font-bold text-white">Ruwad</h3>
+              <p class="text-sm text-gray-400 mt-1">Cultural event discovery and heritage hub app.</p>
+              <div id="desc-ruwad" class="hidden text-xs text-gray-300 mt-3 p-3 bg-neutral-900 rounded-lg">
+                Showcases regional cultural events, topic search tags (Poetry, Falconry, Literature), user profile management, and active event calendars.
+              </div>
+            </div>
+            <div class="flex items-center gap-3 pt-2">
+              <button data-toggle="desc-ruwad" class="toggle-btn px-4 py-2 text-xs font-semibold bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg transition border border-neutral-700">Learn More</button>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="mt-24 px-4 max-w-lg mx-auto space-y-6" data-aos="fade-up">
-    <h2 class="text-3xl font-bold">Get in Touch</h2>
-    <div class="space-y-4">
-      <input id="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white" placeholder="Your Name" />
-      <input id="email" type="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white" placeholder="Your Email" />
-      <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white" placeholder="Your Message"></textarea>
-      <button id="send-btn" class="w-full py-2 bg-gray-700 rounded-md hover:bg-gray-600 transition">Send Message</button>
-    </div>
-    <div class="mt-8 flex justify-center">
-      <a href="https://instagram.com/zsultan___" target="_blank" class="flex items-center space-x-2 text-gray-200 hover:text-white transition">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.88a1.13 1.13 0 1 1-2.25 0 1.13 1.13 0 0 1 2.25 0z"/></svg>
-        <span>@zsultan___</span>
-      </a>
-    </div>
-  </section>
+    <section id="certifications" data-aos="fade-up">
+      <h2 class="text-3xl font-extrabold text-white mb-6 tracking-tight">Certifications</h2>
+      <div class="glass-card rounded-2xl p-6 md:p-8 text-center max-w-xl mx-auto space-y-4">
+        <div class="w-20 h-20 mx-auto rounded-full bg-neutral-800 border border-neutral-700 flex items-center justify-center text-3xl text-white">
+          <i class="fa-brands fa-apple"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white">Certified Apple Developer</h3>
+        <p class="text-gray-400 text-sm">Recognized by Apple for proficiency in Swift programming and native iOS development environments.</p>
+        <span class="inline-block px-3 py-1 bg-neutral-800 text-xs font-medium text-gray-300 rounded-full border border-neutral-700">
+          App Development with Swift &mdash; Associate
+        </span>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="mt-24 py-6 text-center text-gray-500" data-aos="fade-up">
+    <section id="contact" data-aos="fade-up" class="max-w-xl mx-auto">
+      <h2 class="text-3xl font-extrabold text-white mb-6 tracking-tight text-center">Contact</h2>
+      <div class="glass-card rounded-2xl p-6 space-y-4">
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1">Your Name</label>
+          <input id="name" type="text" placeholder="John Doe" class="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-500 transition text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1">Your Email</label>
+          <input id="email" type="email" placeholder="john@example.com" class="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-500 transition text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1">Message</label>
+          <textarea id="message" rows="4" placeholder="Your message here..." class="w-full px-4 py-2.5 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-500 transition text-sm"></textarea>
+        </div>
+        <button id="send-btn" class="w-full py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition text-sm">
+          Send Message
+        </button>
+      </div>
+
+      <div class="mt-8 flex justify-center space-x-6 text-gray-400 text-xl">
+        <a href="https://instagram.com/zsultan___" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://github.com/zayedsultan123" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 text-xs text-gray-500 border-t border-neutral-900">
     <p>© <span id="year"></span> Zayed Sultan. All rights reserved.</p>
   </footer>
 
-  <!-- AOS & year script -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
