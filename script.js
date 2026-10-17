@@ -9,6 +9,12 @@ menu.addEventListener('click', () => {
   navigation.classList.toggle('is-open', open);
 });
 navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+// Reset the drawer when crossing into desktop layout or rotating a tablet.
+const compactNavigation = window.matchMedia('(max-width: 760px)');
+compactNavigation.addEventListener('change', closeMenu);
+document.addEventListener('click', event => {
+  if (!event.target.closest('.header')) closeMenu();
+});
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
 const filters = document.querySelector('.filters');
 filters.hidden = false;
